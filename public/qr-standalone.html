@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扫码查看作品集 - 饶蓓 Astre</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #F4F7F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    max-width: 420px;
+    width: 100%;
+  }
+  .qrcode-svg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .qrcode-svg svg {
+    width: 260px;
+    height: 260px;
+    border-radius: 12px;
+  }
+  .card h1 {
+    font-size: 20px;
+    color: #2E3A34;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .card .name { font-size: 15px; color: #6B7F75; margin-bottom: 2px; }
+  .card .title { font-size: 13px; color: #8FA398; margin-bottom: 18px; }
+  .card .url-box {
+    font-size: 11px; color: #6B7F75; word-break: break-all;
+    background: #F4F7F3; padding: 10px 14px; border-radius: 10px;
+    margin-bottom: 10px; line-height: 1.5;
+  }
+  .card .hint { font-size: 13px; color: #A8C3A0; font-weight: 500; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="qrcode-svg">
+    ##SVG_PLACEHOLDER##
+  </div>
+  <h1>&#x1F4F1; 扫码查看作品集</h1>
+  <p class="name">饶蓓 &middot; Astre</p>
+  <p class="title">项目运营 | 市场营销 | 品牌与内容运营</p>
+  <div class="url-box">##URL_PLACEHOLDER##</div>
+  <p class="hint">Scan QR code to view portfolio &#x2197;</p>
+</div>
+</body>
+</html>

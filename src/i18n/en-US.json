@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "logo": "Portfolio",
+    "hero": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "caseStudies": "Cases"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact"
+  },
+  "about": {
+    "heading": "About Me",
+    "subheading": "A project-driven operator",
+    "paragraph1": "I am a student practitioner specializing in project operations and execution. Across my student leadership and project experiences, I have consistently applied structured thinking to drive action — from goal decomposition and process design to resource integration and on-the-ground execution.",
+    "paragraph2": "I believe great operations is not just about 'getting things done' — it is about building reusable systems and standards (SOPs) that enable teams to collaborate efficiently within a clear framework. Whether managing a large student organization or building a society's brand identity from scratch, I am driven by turning chaos into order and ideas into outcomes.",
+    "paragraph3": "My core strengths lie in project planning and coordination, cross-functional communication, and maintaining execution discipline under high-pressure, multi-threaded environments. I thrive on the 0-to-1 journey and take pleasure in finding optimal solutions within complex systems.",
+    "badges": ["Project Coordination", "SOP Systems", "Cross-functional Comms", "Brand Operations", "0-to-1 Builder"]
+  },
+  "experience": {
+    "heading": "Experience",
+    "subheading": "Every role is a project in its own right",
+    "expandLabel": "View Details",
+    "collapseLabel": "Collapse",
+    "keyHighlights": "Key Highlights"
+  },
+  "skills": {
+    "heading": "Skills",
+    "subheading": "A toolkit in constant refinement",
+    "clickHint": "Click to see usage scenarios"
+  },
+  "caseStudies": {
+    "heading": "Case Studies",
+    "subheading": "Selected projects, dissected in depth",
+    "problem": "Problem",
+    "role": "Role",
+    "actions": "Actions",
+    "outcome": "Outcome",
+    "viewLive": "View Live"
+  },
+  "project": {
+    "overview": "Project Overview",
+    "myRole": "My Role",
+    "keyActions": "Key Actions",
+    "results": "Results",
+    "mediaGallery": "Media Gallery",
+    "time": "Time",
+    "roleLabel": "Role",
+    "teamSize": "Team Size",
+    "background": "Background",
+    "backToHome": "Back to Home",
+    "uploadPlaceholder": "Upload images or videos here",
+    "noMedia": "No media yet — awaiting upload"
+  },
+  "contact": {
+    "heading": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "downloadResume": "Download Resume PDF",
+    "copyEmail": "Copy Email",
+    "copied": "Copied!",
+    "jobDirections": "Job Directions"
+  },
+  "admin": {
+    "login": "Admin Login",
+    "password": "Password",
+    "submit": "Login",
+    "wrongPassword": "Wrong password",
+    "logout": "Exit Admin",
+    "editMode": "Edit Mode",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "builtWith": "Built with Next.js & TailwindCSS",
+    "email": "Email",
+    "location": "Fujian, China"
+  },
+  "languageToggle": {
+    "switchToEn": "Switch to English",
+    "switchToZh": "切换到中文"
+  },
+  "video": {
+    "fallback": "Your browser does not support video playback."
+  }
+}

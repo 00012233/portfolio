@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "logo": "作品集",
+    "hero": "首页",
+    "about": "关于我",
+    "experience": "经历",
+    "skills": "技能",
+    "caseStudies": "案例"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "ctaProjects": "查看项目",
+    "ctaContact": "联系我"
+  },
+  "about": {
+    "heading": "关于我",
+    "subheading": "以项目为驱动的运营者",
+    "paragraph1": "我是一名专注于项目运营与执行的学生实践者。在过去的学生工作与项目经历中，我始终以结构化思维驱动行动——从目标拆解、流程设计到资源整合与落地执行，一步一个脚印。",
+    "paragraph2": "我相信，好的运营不只是「会做事」，而是建立可复用的系统和标准（SOP），让团队能在清晰的框架中高效协作。无论是管理数十人的学生团队，还是从零搭建一个社团的品牌体系，我都致力于将混乱转化为秩序，将想法转化为成果。",
+    "paragraph3": "我的核心优势在于：项目规划与统筹、跨部门沟通协调、以及在高压力、多线程环境下保持执行节奏。我享受从0到1的搭建过程，也热衷于在复杂系统中找到最优解。",
+    "badges": ["项目统筹", "SOP 体系", "跨部门沟通", "品牌运营", "从0到1搭建"]
+  },
+  "experience": {
+    "heading": "经历",
+    "subheading": "每一次经历都是一次项目历练",
+    "expandLabel": "查看详情",
+    "collapseLabel": "收起详情",
+    "keyHighlights": "关键成果"
+  },
+  "skills": {
+    "heading": "技能",
+    "subheading": "持续打磨的工具箱",
+    "clickHint": "点击查看使用场景"
+  },
+  "caseStudies": {
+    "heading": "项目案例",
+    "subheading": "精选项目深度拆解",
+    "problem": "问题",
+    "role": "角色",
+    "actions": "行动",
+    "outcome": "结果",
+    "viewLive": "在线预览"
+  },
+  "project": {
+    "overview": "项目概览",
+    "myRole": "我的职责",
+    "keyActions": "核心行动",
+    "results": "项目成果",
+    "mediaGallery": "项目展示",
+    "time": "时间",
+    "roleLabel": "角色",
+    "teamSize": "团队规模",
+    "background": "项目背景",
+    "backToHome": "返回首页",
+    "uploadPlaceholder": "此处可上传图片或视频",
+    "noMedia": "暂无媒体内容，等待上传"
+  },
+  "contact": {
+    "heading": "联系我",
+    "email": "邮箱",
+    "phone": "电话",
+    "downloadResume": "下载简历 PDF",
+    "copyEmail": "复制邮箱",
+    "copied": "已复制！",
+    "jobDirections": "求职方向"
+  },
+  "admin": {
+    "login": "管理员登录",
+    "password": "密码",
+    "submit": "登录",
+    "wrongPassword": "密码错误",
+    "logout": "退出管理",
+    "editMode": "编辑模式",
+    "save": "保存",
+    "cancel": "取消"
+  },
+  "footer": {
+    "copyright": "版权所有",
+    "builtWith": "由 Next.js & TailwindCSS 构建",
+    "email": "邮箱",
+    "location": "中国 · 福建"
+  },
+  "languageToggle": {
+    "switchToEn": "Switch to English",
+    "switchToZh": "切换到中文"
+  },
+  "video": {
+    "fallback": "您的浏览器不支持视频播放。"
+  }
+}
