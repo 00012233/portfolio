@@ -1,210 +1,96 @@
 'use client';
 
 import Link from 'next/link';
-import { useLanguage } from '@/context/LanguageContext';
-import { experiences } from '@/data/experience';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import ImageGallery from '@/components/ui/ImageGallery';
-import VideoEmbed from '@/components/ui/VideoEmbed';
-import MediaUpload from '@/components/ui/MediaUpload';
+import PhotoCarousel from '@/components/ui/PhotoCarousel';
+import { useLanguage } from '@/context/LanguageContext';
+import type { ProjectItem, CaseStudyData } from '@/types';
 
-export default function ProjectDetailClient({ id }: { id: string }) {
+export default function ProjectDetailClient({ id, project, caseStudy }: { id: string; project: ProjectItem | null; caseStudy: CaseStudyData | null }) {
   const { t, pick, lang } = useLanguage();
-  const project = experiences.find((e) => e.id === id);
 
   if (!project) {
-    return (
-      <>
-        <Navbar />
-        <main className="min-h-screen pt-24 pb-24 px-6 bg-bg flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-6xl font-bold text-text-muted mb-4">404</h1>
-            <p className="text-text-secondary mb-6">
-              {lang === 'zh-CN' ? '项目未找到' : 'Project not found'}
-            </p>
-            <Link
-              href="/"
-              className="px-6 py-2.5 rounded-full bg-primary text-white font-medium
-                         hover:bg-primary-dark transition-colors text-sm"
-            >
-              {t('project.backToHome')}
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    return <><Navbar /><main className="min-h-screen pt-24 flex items-center justify-center"><p className="text-text-muted">Project not found</p></main><Footer /></>;
   }
-
-  const { org, role, period, description, highlights, images, videoUrl } =
-    project;
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-24 pb-24 px-6 bg-bg">
+      <main className="min-h-screen pt-24 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Breadcrumb */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-text-muted
-                       hover:text-primary transition-colors mb-8"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path d="M10 3L5 8l5 5" />
-            </svg>
+          <Link href="/experience" className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-primary transition-colors mb-8">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10 3L5 8l5 5"/></svg>
             {t('project.backToHome')}
           </Link>
 
-          {/* Header */}
-          <div className="mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-3">
-              {pick(org)}
-            </h1>
-            <div className="flex items-center gap-4 flex-wrap">
-              <span className="text-sm text-text-secondary bg-secondary px-3 py-1 rounded-full">
-                {pick(role)}
-              </span>
-              <span className="text-sm text-text-muted">{period}</span>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-3">{pick(project.title)}</h1>
+            <div className="flex items-center gap-3 flex-wrap mb-10">
+              <span className="text-sm text-text-secondary bg-secondary px-3 py-1 rounded-full">{pick(project.role)}</span>
+              <span className="text-sm text-text-muted">{project.period}</span>
             </div>
-          </div>
 
-          {/* 1. Project Overview */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">
-              {t('project.overview')}
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div className="bg-secondary/50 rounded-xl p-4">
-                <span className="text-xs text-text-muted uppercase tracking-wider">
-                  {t('project.time')}
-                </span>
-                <p className="text-sm font-medium text-text-primary mt-1">
-                  {period}
-                </p>
-              </div>
-              <div className="bg-secondary/50 rounded-xl p-4">
-                <span className="text-xs text-text-muted uppercase tracking-wider">
-                  {t('project.roleLabel')}
-                </span>
-                <p className="text-sm font-medium text-text-primary mt-1">
-                  {pick(role)}
-                </p>
-              </div>
-              <div className="bg-secondary/50 rounded-xl p-4">
-                <span className="text-xs text-text-muted uppercase tracking-wider">
-                  {t('project.teamSize')}
-                </span>
-                <p className="text-sm font-medium text-text-primary mt-1">
-                  {lang === 'zh-CN' ? '视项目而定' : 'Varies by project'}
-                </p>
-              </div>
-              <div className="bg-secondary/50 rounded-xl p-4">
-                <span className="text-xs text-text-muted uppercase tracking-wider">
-                  {t('project.background')}
-                </span>
-                <p className="text-sm font-medium text-text-primary mt-1">
-                  {pick(org)}
-                </p>
-              </div>
-            </div>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              {pick(description)}
-            </p>
-          </section>
+            {/* Project Overview */}
+            <section className="mb-12">
+              <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">{t('project.overview')}</h2>
+              <p className="text-text-secondary leading-relaxed">{pick(project.summary)}</p>
+            </section>
 
-          {/* 2. My Role */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">
-              {t('project.myRole')}
-            </h2>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              {pick(description).split('.')[0]}.
-            </p>
-          </section>
+            {/* Project Sections */}
+            {project.sections.map((s) => (
+              <section key={s.id} className="mb-12">
+                <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">{pick(s.title)}</h2>
+                <p className="text-text-secondary leading-relaxed">{pick(s.content)}</p>
+                {s.images && s.images.length > 0 && <div className="mt-4"><PhotoCarousel images={s.images} /></div>}
+              </section>
+            ))}
 
-          {/* 3. Key Actions */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">
-              {t('project.keyActions')}
-            </h2>
-            <ul className="space-y-3">
-              {(lang === 'zh-CN' ? highlights.zh : highlights.en).map(
-                (item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-sm text-text-secondary"
-                  >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                    {item}
-                  </li>
-                ),
-              )}
-            </ul>
-          </section>
-
-          {/* 4. Results */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">
-              {t('project.results')}
-            </h2>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              {pick(description)}
-            </p>
-          </section>
-
-          {/* 5. Media Gallery */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold text-text-primary mb-4 pb-2 border-b border-border">
-              {t('project.mediaGallery')}
-            </h2>
-
-            {videoUrl && (
-              <div className="mb-6">
-                <VideoEmbed url={videoUrl} title={pick(org)} />
+            {/* Case Study sections if available */}
+            {caseStudy && (
+              <div className="mt-16 pt-12 border-t-2 border-border">
+                <h2 className="text-2xl font-bold text-text-primary mb-8 text-center">📊 {pick(caseStudy.title)}</h2>
+                {caseStudy.sections.map((s) => (
+                  <section key={s.id} className="mb-10">
+                    <h3 className="text-lg font-semibold text-text-primary mb-3">{pick(s.title)}</h3>
+                    {s.content && <p className="text-text-secondary leading-relaxed">{pick(s.content)}</p>}
+                    {s.items && (
+                      <ul className="space-y-2 mt-3">
+                        {pick(s.items).map((item, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-text-secondary"><span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"/>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </section>
+                ))}
               </div>
             )}
 
-            {images && images.length > 0 ? (
-              <ImageGallery images={images} alt={pick(org)} />
-            ) : (
-              <div className="space-y-4">
-                <MediaUpload />
-                <p className="text-xs text-text-muted text-center">
-                  {t('project.noMedia')}
-                </p>
-              </div>
+            {/* Dashboard link for calligraphy project */}
+            {id === 'calligraphy' && (
+              <section className="mt-12 pt-8 border-t-2 border-accent">
+                <Link href="/project/calligraphy/dashboard" className="block bg-white rounded-2xl border-2 border-accent p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="text-3xl">📊</span>
+                    <div>
+                      <h2 className="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">{t('project.dashboard')}</h2>
+                      <p className="text-sm text-text-muted mt-0.5">{lang === 'zh-CN' ? 'QQ空间官Q运营数据全览 · 95条动态 · KPI分析 · 趋势图表' : 'QQ Space Official Account Analytics · 95 Posts · KPIs · Trend Charts'}</p>
+                    </div>
+                    <span className="ml-auto text-accent text-2xl group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </Link>
+              </section>
             )}
-          </section>
 
-          {/* Back link */}
-          <div className="text-center pt-8 border-t border-border">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white
-                         font-medium hover:bg-primary-dark transition-colors text-sm"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M10 3L5 8l5 5" />
-              </svg>
-              {t('project.backToHome')}
-            </Link>
-          </div>
+            {/* Gallery placeholder */}
+            <section className="mt-12 pt-8 border-t border-border">
+              <h2 className="text-xl font-bold text-text-primary mb-4">{t('project.gallery')}</h2>
+              <div className="border-2 border-dashed border-primary/30 rounded-2xl p-10 text-center bg-secondary/50">
+                <p className="text-sm text-text-muted">{t('project.uploadPlaceholder')}</p>
+              </div>
+            </section>
+          </motion.div>
         </div>
       </main>
       <Footer />

@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-  type ReactNode,
-} from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
 import type { Locale } from '@/types';
 import zhDict from '@/i18n/zh-CN.json';
 import enDict from '@/i18n/en-US.json';
@@ -57,21 +50,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, [lang, mounted]);
 
-  const setLang = useCallback((newLang: Locale) => {
-    setLangState(newLang);
-  }, []);
-
-  const t = useCallback(
-    (key: string): string => getTranslation(lang, key),
-    [lang],
-  );
-
-  const pick = useCallback(
-    <T,>(bilingual: { zh: T; en: T }): T => {
-      return lang === 'zh-CN' ? bilingual.zh : bilingual.en;
-    },
-    [lang],
-  );
+  const setLang = useCallback((newLang: Locale) => setLangState(newLang), []);
+  const t = useCallback((key: string): string => getTranslation(lang, key), [lang]);
+  const pick = useCallback(<T,>(b: { zh: T; en: T }): T => (lang === 'zh-CN' ? b.zh : b.en), [lang]);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t, pick }}>
@@ -82,8 +63,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage(): LanguageContextValue {
   const ctx = useContext(LanguageContext);
-  if (!ctx) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
+  if (!ctx) throw new Error('useLanguage must be used within LanguageProvider');
   return ctx;
 }

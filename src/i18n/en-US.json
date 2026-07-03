@@ -1,90 +1,179 @@
 {
   "nav": {
-    "logo": "Portfolio",
-    "hero": "Home",
+    "home": "Home",
     "about": "About",
     "experience": "Experience",
     "skills": "Skills",
-    "caseStudies": "Cases"
+    "cases": "Cases",
+    "admin": "Admin"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "ctaProjects": "View Projects",
-    "ctaContact": "Contact"
-  },
-  "about": {
-    "heading": "About Me",
-    "subheading": "A project-driven operator",
-    "paragraph1": "I am a student practitioner specializing in project operations and execution. Across my student leadership and project experiences, I have consistently applied structured thinking to drive action — from goal decomposition and process design to resource integration and on-the-ground execution.",
-    "paragraph2": "I believe great operations is not just about 'getting things done' — it is about building reusable systems and standards (SOPs) that enable teams to collaborate efficiently within a clear framework. Whether managing a large student organization or building a society's brand identity from scratch, I am driven by turning chaos into order and ideas into outcomes.",
-    "paragraph3": "My core strengths lie in project planning and coordination, cross-functional communication, and maintaining execution discipline under high-pressure, multi-threaded environments. I thrive on the 0-to-1 journey and take pleasure in finding optimal solutions within complex systems.",
-    "badges": ["Project Coordination", "SOP Systems", "Cross-functional Comms", "Brand Operations", "0-to-1 Builder"]
-  },
-  "experience": {
-    "heading": "Experience",
-    "subheading": "Every role is a project in its own right",
-    "expandLabel": "View Details",
-    "collapseLabel": "Collapse",
-    "keyHighlights": "Key Highlights"
-  },
-  "skills": {
-    "heading": "Skills",
-    "subheading": "A toolkit in constant refinement",
-    "clickHint": "Click to see usage scenarios"
-  },
-  "caseStudies": {
-    "heading": "Case Studies",
-    "subheading": "Selected projects, dissected in depth",
-    "problem": "Problem",
-    "role": "Role",
-    "actions": "Actions",
-    "outcome": "Outcome",
-    "viewLive": "View Live"
-  },
-  "project": {
-    "overview": "Project Overview",
-    "myRole": "My Role",
-    "keyActions": "Key Actions",
-    "results": "Results",
-    "mediaGallery": "Media Gallery",
-    "time": "Time",
-    "roleLabel": "Role",
-    "teamSize": "Team Size",
-    "background": "Background",
-    "backToHome": "Back to Home",
-    "uploadPlaceholder": "Upload images or videos here",
-    "noMedia": "No media yet — awaiting upload"
+    "ctaContact": "Contact",
+    "ctaProjects": "View Projects"
   },
   "contact": {
     "heading": "Contact",
     "email": "Email",
     "phone": "Phone",
-    "downloadResume": "Download Resume PDF",
+    "wechat": "Same as WeChat",
+    "downloadResume": "Download Resume",
     "copyEmail": "Copy Email",
+    "copyPhone": "Copy Phone",
     "copied": "Copied!",
-    "jobDirections": "Job Directions"
+    "jobTitle": "Job Directions",
+    "jobValue": "Marketing Operations | Management Trainee | Project Management | Brand Operations"
+  },
+  "about": {
+    "heading": "About Me",
+    "p1": "I am a student practitioner specializing in project operations and execution. Across my student leadership and project experiences, I have consistently applied structured thinking to drive action — from project decomposition and process design to resource integration and on-the-ground execution.",
+    "p2": "I believe great operations is not just about getting things done — it is about building reusable systems and standards (SOPs) that enable teams to collaborate efficiently within a clear framework.",
+    "p3": "Whether managing a large student team or building a society's brand identity from scratch, I am driven by turning chaos into order and ideas into outcomes.",
+    "p4": "My core strengths lie in project planning and coordination, cross-functional communication, and maintaining execution discipline under high-pressure, multi-threaded environments. I thrive on the 0-to-1 journey and take pleasure in continuously optimizing existing systems."
+  },
+  "experience": {
+    "heading": "Experience",
+    "work": "Work Experience",
+    "project": "Project Experience",
+    "viewDetail": "View Detail"
+  },
+  "skills": {
+    "heading": "Skills",
+    "clickHint": "Click to explore",
+    "canva": "Canva Portfolio",
+    "canvaDesc": "Posters, event materials, promotional designs",
+    "aiTools": "AI Tools",
+    "automation": "AI & Automation",
+    "claudeCode": "Claude Code",
+    "claudeDesc": "Web Development · Workflow Optimization · Information Organization · Automation",
+    "uploadHint": "Image upload placeholder"
+  },
+  "project": {
+    "overview": "Project Overview",
+    "myRole": "My Role",
+    "background": "Background",
+    "actions": "Key Actions",
+    "results": "Results",
+    "gallery": "Gallery",
+    "backToHome": "Back to Home",
+    "noMedia": "No media yet",
+    "uploadPlaceholder": "Upload images or videos here",
+    "dashboard": "Dashboard"
   },
   "admin": {
     "login": "Admin Login",
     "password": "Password",
     "submit": "Login",
     "wrongPassword": "Wrong password",
-    "logout": "Exit Admin",
-    "editMode": "Edit Mode",
-    "save": "Save",
-    "cancel": "Cancel"
+    "logout": "Logout",
+    "editMode": "Edit Mode"
   },
   "footer": {
     "copyright": "All rights reserved",
-    "builtWith": "Built with Next.js & TailwindCSS",
-    "email": "Email",
-    "location": "Fujian, China"
+    "builtWith": "Built with Next.js & TailwindCSS"
   },
-  "languageToggle": {
+  "lang": {
     "switchToEn": "Switch to English",
     "switchToZh": "切换到中文"
   },
-  "video": {
-    "fallback": "Your browser does not support video playback."
+  "work": {
+    "rocheDesc": "(Content to be added)",
+    "novoDesc": "(Content to be added)",
+    "ganzhouDesc": "(Content to be added)"
+  },
+  "caseStudy": {
+    "heroTitle": "Xinglin Wenyuan QQ Space Operations",
+    "heroSubtitle": "Case Study",
+    "overview": "Project Overview",
+    "period": "Statistics Period",
+    "myPeriod": "My Responsibility Period",
+    "myRole": "My Role",
+    "dashboard": "Performance Overview",
+    "totalContent": "Total Content Published",
+    "totalViews": "Total Views",
+    "qqFriends": "QQ Friends",
+    "qqGroup": "QQ Group Members",
+    "myPeriodLabel": "My Responsibility Period",
+    "postsUnit": "posts",
+    "growth": "Account Growth",
+    "growthTitle": "Account Growth",
+    "growthSubtitle": "Key metrics comparison before vs after my operation",
+    "before": "Before",
+    "after": "After",
+    "growthRate": "Growth Rate",
+    "qqFriendsLabel": "QQ Friends",
+    "qqGroupLabel": "QQ Group Members",
+    "strategy": "Content Strategy",
+    "strategySubtitle": "A complete operational loop from recruitment to retrospective",
+    "recruitment": "Recruitment Operations",
+    "recruitmentItems": "Promotion / Consultation / Interview / Summary",
+    "dailyTraining": "Regular Training",
+    "dailyTrainingItems": "Calligraphy Teaching / Practice / Knowledge Sharing",
+    "eventPromotion": "Event Promotion",
+    "eventPromotionItems": "Pre-event Buzz / Cross-Category Collab / Calendar Marketing",
+    "eventExecution": "Event Execution",
+    "eventExecutionItems": "Live Operations / Real-time Coverage / Engagement Guidance",
+    "eventRetro": "Event Retrospective",
+    "eventRetroItems": "Data Collection / Impact Assessment / Knowledge Capture",
+    "brandComm": "Brand Communication",
+    "brandCommItems": "Visual Guidelines / Content Templates / IP Building",
+    "holidayOps": "Holiday Operations",
+    "holidayOpsItems": "Solar Term Posters / Holiday Greetings / Trend Hijacking",
+    "insights": "Data Insights",
+    "insightsSubtitle": "Operational thinking demonstrated through real data",
+    "topViews": "Top 10 by Views",
+    "topLikes": "Top 10 by Likes",
+    "topShares": "Top 10 by Shares",
+    "topComments": "Top 10 by Comments",
+    "contentDistribution": "Content Distribution",
+    "monthlyPosts": "Monthly Posting Trend",
+    "monthlyViews": "Monthly Views Trend",
+    "monthlyEngagement": "Monthly Engagement Trend",
+    "engagement": "Engagement",
+    "highlightPost": "Viral Post Spotlight",
+    "highlightViews": "Views",
+    "highlightLikes": "Likes",
+    "highlightComments": "Comments",
+    "highlightShares": "Shares",
+    "representative": "Representative Cases",
+    "representativeSubtitle": "Click each case to view the full project retrospective",
+    "comingSoon": "Coming Soon",
+    "comingSoonHint": "Content is being organized — stay tuned",
+    "reflection": "My Reflection",
+    "reflectionSubtitle": "Not just a project showcase — my growth and thinking",
+    "reflectionContentPlanning": "Content Planning",
+    "reflectionContentPlanningText": "Established a four-pillar content matrix covering solar terms, holidays, events, and artworks — maintaining consistent publishing rhythm while concentrating efforts at key moments.",
+    "reflectionEventPlanning": "Event Planning",
+    "reflectionEventPlanningText": "Curated \"Calligraphy+\" event series, leveraging cross-category collaborations to boost content freshness and reach.",
+    "reflectionBrand": "Brand Communication",
+    "reflectionBrandText": "Built visual identity from scratch with unified templates and poster guidelines, establishing a recognizable brand presence.",
+    "reflectionData": "Data Analysis",
+    "reflectionDataText": "Continuously tracked views, engagement rate, and follower growth — using data to inform content strategy optimization.",
+    "reflectionRetro": "Event Retrospective",
+    "reflectionRetroText": "Conducted structured retrospectives after every major event, documenting insights into reusable operational SOPs.",
+    "dataNoteTitle": "Data Note",
+    "dataNoteText": "All data sourced from QQ Space official account backend and manually organized. All numbers are real operational data, unmodified.",
+    "publishDate": "Publish Date",
+    "noData": "No data available"
+  },
+  "innovation": {
+    "heroTitle": "\"Heart for the Party\"",
+    "heroSubtitle": "National Innovation Training Program · Immersive Cultural Heritage Experience",
+    "overview": "Project Overview",
+    "projectGoal": "Project Goal",
+    "capabilities": "Core Capabilities",
+    "myRole": "My Role",
+    "eventPlanning": "Event Planning",
+    "opsManagement": "Operations Management",
+    "visualDesign": "Visual & Communication Design",
+    "onSiteExec": "On-site Execution",
+    "results": "Project Results",
+    "videoTitle": "Promo Video",
+    "visualWorks": "Visual Works",
+    "logo": "Logo",
+    "posters": "Promotional Materials",
+    "eventPhotos": "Event Photos",
+    "clickToEnlarge": "Click to enlarge",
+    "summary": "Project Summary"
   }
 }

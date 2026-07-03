@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 
 const ADMIN_PASSWORD = 'admin123';
-const STORAGE_KEY = 'portfolio-admin';
+const STORAGE_KEY = 'portfolio-admin-auth';
 
 interface AdminContextValue {
   isAdmin: boolean;
@@ -18,40 +18,21 @@ export function AdminProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === 'true') {
-      setIsAdmin(true);
-    }
+    setIsAdmin(localStorage.getItem(STORAGE_KEY) === 'true');
     setMounted(true);
   }, []);
 
-  const login = (password: string): boolean => {
-    if (password === ADMIN_PASSWORD) {
-      setIsAdmin(true);
-      localStorage.setItem(STORAGE_KEY, 'true');
-      return true;
-    }
+  const login = (pw: string) => {
+    if (pw === ADMIN_PASSWORD) { setIsAdmin(true); localStorage.setItem(STORAGE_KEY, 'true'); return true; }
     return false;
   };
-
-  const logout = () => {
-    setIsAdmin(false);
-    localStorage.removeItem(STORAGE_KEY);
-  };
-
+  const logout = () => { setIsAdmin(false); localStorage.removeItem(STORAGE_KEY); };
   if (!mounted) return null;
-
-  return (
-    <AdminContext.Provider value={{ isAdmin, login, logout }}>
-      {children}
-    </AdminContext.Provider>
-  );
+  return <AdminContext.Provider value={{ isAdmin, login, logout }}>{children}</AdminContext.Provider>;
 }
 
-export function useAdmin(): AdminContextValue {
+export function useAdmin() {
   const ctx = useContext(AdminContext);
-  if (!ctx) {
-    throw new Error('useAdmin must be used within an AdminProvider');
-  }
+  if (!ctx) throw new Error('useAdmin must be within AdminProvider');
   return ctx;
 }
